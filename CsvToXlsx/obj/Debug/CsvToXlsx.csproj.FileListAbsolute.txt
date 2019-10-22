@@ -1,0 +1,9 @@
+C:\Apps-Windows\CsvToXlsx\CsvToXlsx\bin\Debug\CsvToXlsx.exe.config
+C:\Apps-Windows\CsvToXlsx\CsvToXlsx\bin\Debug\CsvToXlsx.exe
+C:\Apps-Windows\CsvToXlsx\CsvToXlsx\bin\Debug\CsvToXlsx.pdb
+C:\Apps-Windows\CsvToXlsx\CsvToXlsx\obj\Debug\CsvToXlsx.csprojAssemblyReference.cache
+C:\Apps-Windows\CsvToXlsx\CsvToXlsx\obj\Debug\CsvToXlsx.exe
+C:\Apps-Windows\CsvToXlsx\CsvToXlsx\obj\Debug\CsvToXlsx.pdb
+C:\Apps-Windows\CsvToXlsx\CsvToXlsx\bin\Debug\EPPlus.dll
+C:\Apps-Windows\CsvToXlsx\CsvToXlsx\bin\Debug\EPPlus.xml
+C:\Apps-Windows\CsvToXlsx\CsvToXlsx\obj\Debug\CsvToXlsx.csproj.CopyComplete
