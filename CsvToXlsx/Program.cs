@@ -1,11 +1,8 @@
 ﻿using Microsoft.VisualBasic.FileIO;
 using OfficeOpenXml;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CsvToXlsx
 {
@@ -24,7 +21,7 @@ namespace CsvToXlsx
                     CreateSheet(fileInfo[0],fileInfo[1], package);
                 }                
 
-                FileInfo file = new FileInfo(outputFile+".xlsx");
+                FileInfo file = new FileInfo(outputFile);
                 package.SaveAs(file);
 
             }
@@ -49,12 +46,29 @@ namespace CsvToXlsx
                     string[] fields = parser.ReadFields();
                     int cell = 1;
 
-                    foreach (string field in fields)
+                    if (parser.LineNumber <= 0)
                     {
-                        worksheet.Cells[row, cell].Value = field;
-                        cell++;
-                        //Console.WriteLine(field);
+                        row++;
                     }
+                    else
+                    {
+                        row = Int32.Parse(parser.LineNumber.ToString());
+                        
+                    }
+                        
+                    //Console.WriteLine(parser.LineNumber);
+                    //Console.ReadLine();
+                    //if(parser.LineNumber > 0)
+                   // {
+                        foreach (string field in fields)
+                        {
+
+                            worksheet.Cells[row, cell].Value = field;
+                            cell++;
+
+                        }
+                   // }
+                   
                     // Console.Read();
                     row++;
                 }
