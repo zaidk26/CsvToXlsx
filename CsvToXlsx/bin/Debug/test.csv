@@ -1,23 +1,23 @@
 
-,,,,BEARINGS & BRAKE PARTS CITY cc,,26/08/2013
+,,,,BEARINGS & BRAKE PARTS CITY cc#$#font-bold=true#$#font-italic=true,,26/08/2013
 
-,,,,Provisional Purchase Order Details
+,,,,Provisional Purchase Order Details#$#font-italic=true
 
-Order #,   237,,Order Date :,23/07/2013,Expected Arrival Date :,30/09/2013
+Order #,   (237234),,Order Date :,23/07/2013,Expected Arrival Date :,30/09/2013
 
-Supplier,INT047 - BT-TECH PTE LTD - USD,,Currency :,UNITED STATES DOLLAR,Exchange Rate :,    1.00000,Discount :,
+Supplier,INT047 - BT-TECH PTE LTD - USD,,Currency :,UNITED STATES DOLLAR,Exchange Rate :,    1.00000,Discount : ,(3432.3434)
 
 Freight Supplier,      ,,Freight Markup % :,
 
-Product Code,Product Description,Units Ordered,Cartons Ordered,Foreign Currency Price,Foreign Currency Amount,Price,Amount,Freight Charges,Total,Cost
+Product Code#$#column-width=100,Product Description#$#font-underline=true,Units Ordered,Cartons Ordered,Foreign Currency Price,Foreign Currency Amount,Price,Amount,Freight Charges,Total,Cost
 
-013-FBJ,FBJ - THRUST BALL,    100,       ,           ,           ,       2.01,     201.00,           ,       2.01
+013-FBJ,FBJ - THRUST BALL,    100,       ,           ,           ,       2.01,     (201.00),           ,       2.01
 05079/05185-TIMKEN,TIMKEN - IMPERIAL TAPER,      1,       ,           ,           ,      26.27,      52.54,           ,      26.27
-07100S/210X-FBJ,FBJ - IMPERIAL TAPER,    150,       ,           ,           ,       1.67,     250.50,           ,       1.67
+07100S/210X-FBJ,FBJ - IMPERIAL TAPER,    0150,       ,           ,           ,       1.67,     250.50,           ,       1.67
 11949/10-TIMKEN,TIMKEN - IMPERIAL TAPER SET 2,    150,       ,           ,           ,       2.70,     405.00,           ,       2.70
 12649/10-TIMKEN,TIMKEN - IMPERIAL TAPER SET 3,    280,       ,           ,           ,       2.90,     812.00,           ,       2.90
 1280/20-FBJ,FBJ - IMPERIAL TAPER,    140,       ,           ,           ,       2.48,     347.20,           ,       2.48
-1311TV.C3-FAG,FAG - SELF-ALIGNING BALL,     10,       ,           ,           ,      26.00,     260.00,           ,      26.00
+1311TV.C3-FAG,FAG - SELF-ALIGNING BALL,     10,       ,           ,           ,      26.00,     23460.00,           ,      26.00
 16002-FBJ,FBJ - DEEP GROOVE BALL,     50,       ,           ,           ,       0.48,      24.00,           ,       0.48
 16004.2ZR-FAG,FAG - DEEP GROOVE BALL,     40,       ,           ,           ,       3.20,     128.00,           ,       3.20
 16018.C3-FAG,FAG - DEEP GROOVE BALL,     20,       ,           ,           ,      30.80,     616.00,           ,      30.80
