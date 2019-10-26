@@ -2,6 +2,7 @@
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -211,6 +212,43 @@ namespace CsvToXlsx
                         worksheet.Column(cell).Width = double.Parse(value);
                         break;
 
+                    case "column-freeze":
+                        worksheet.View.FreezePanes(row+1, cell);
+                        break;
+
+
+                    case "column-border":
+                        switch (value)
+                        {
+                            case "left":
+                                worksheet.Cells[row, cell].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+                                break;
+                            case "right":
+                                worksheet.Cells[row, cell].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+                                break;
+                            case "top":
+                                worksheet.Cells[row, cell].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+                                break;
+                            case "bottom":
+                                worksheet.Cells[row, cell].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+                                break;
+                            case "all":
+                                worksheet.Cells[row, cell].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+                                worksheet.Cells[row, cell].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+                                worksheet.Cells[row, cell].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+                                worksheet.Cells[row, cell].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+                                break;
+                        }
+                        
+                        break;
+
+                    case "column-background":
+                        worksheet.Cells[row, cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                        worksheet.Cells[row, cell].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml(value));
+                        break;
+
+
+
                     case "font-bold":
                         worksheet.Cells[row, cell].Style.Font.Bold = true;
                         break;
@@ -224,7 +262,11 @@ namespace CsvToXlsx
                         break;
 
                     case "font-color":
-                        worksheet.Cells[row, cell].Style.Font.UnderLine = true;
+                        worksheet.Cells[row, cell].Style.Font.Color.SetColor(ColorTranslator.FromHtml(value));
+                        break;
+
+                    case "font-size":
+                        worksheet.Cells[row, cell].Style.Font.Size = float.Parse(value);
                         break;
 
                 }

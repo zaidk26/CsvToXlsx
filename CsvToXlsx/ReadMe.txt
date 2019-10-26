@@ -43,10 +43,22 @@ Pass values with column data prepend with #$#property=value
 e.g Customer Details#$#font-weight=bold#$#text-color=#456879
 
 Available Styles:
+-----------------
 
 column-width=120  (if a width is specified for 1 column it should be specified for all. IF no columns specify a width, width will be set to auto.)
+
+column-freeze=true
+
+column-border=right
+column-border=left
+column-border=top
+column-border=bottom
+column-border=all
+
+column-background=#456FFF
 
 font-bold=true
 font-italic=true
 font-underline=true
-font-color=#456FFF
+font-color=#456FFF   
+font-size=26  
