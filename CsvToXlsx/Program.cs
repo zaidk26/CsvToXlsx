@@ -48,9 +48,11 @@ namespace CsvToXlsx
             // Add a new worksheet to the empty workbook
             ExcelWorksheet worksheet = package.Workbook.Worksheets.Add(sheetName);
             //Add the headers
-           
+
+            autofit = true;
 
             CsvFileParser(csvFileLink, dateFormat, provider, worksheet);
+
             if (autofit)
             {
                 worksheet.Cells.AutoFitColumns();
