@@ -12,7 +12,7 @@ namespace CsvToXlsx
 {
     class Program
     {
-        private static bool autofit = true;
+       
         static void Main(string[] args)
         {
             string outputFile = args[args.Length - 1];
@@ -31,6 +31,8 @@ namespace CsvToXlsx
                 package.SaveAs(file);
 
             }
+
+            System.Diagnostics.Process.Start(outputFile);
         }
 
         /// <summary>
@@ -50,7 +52,6 @@ namespace CsvToXlsx
             //Add the headers
 
           
-
             CsvFileParser(csvFileLink, dateFormat,columnSize, provider, worksheet);
 
             if (columnSize.Equals("auto"))
@@ -133,6 +134,7 @@ namespace CsvToXlsx
         /// <param name="field"></param>
         private static void FormatAndInsertValue(CultureInfo provider, ExcelWorksheet worksheet, int row, int cell, string field,string dateFormat)
         {
+         
             //format 0 to int
             if (Regex.Match(field, @"^0$").Success)
             {

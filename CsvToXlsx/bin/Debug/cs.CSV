@@ -1,0 +1,106 @@
+,BBC   - BEARINGS & BRAKE PARTS CITY cc#$#font-bold=true#$#font-size=12,,
+
+,Bottom 100 Customer Sales#$#font-bold=true#$#font-size=12,,
+
+Code#$#font-bold=true#$#font-size=10#$#column-width=15,Customer Name#$#font-bold=true#$#font-size=10#$#column-width=120,_#$#column-width=15,Cost of Sale#$#font-bold=true#$#font-size=10#$#column-width=20,Sales Value#$#font-bold=true#$#font-size=10#$#column-width=20,Profit#$#font-bold=true#$#font-size=10#$#column-width=20,Profit Margin#$#font-bold=true#$#font-size=10#$#column-width=20
+_#$#font-color=#00C0FFFF#$#column-freeze=true
+H0003 ,HENRI''S TUNE-UP CENTRE            ,,        4.83 ,       10.00 ,        5.17 ,      107.04
+V0001 ,VARCO INDUSTRIAL PRODUCTS          ,,     (185.40),      181.40 ,      366.80 ,     (197.84)
+B0028 ,B.I.BETHLEHEM                      ,,      214.66 ,      371.00 ,      156.34 ,       72.83
+Y0001 ,YUSSUF & SONS TRADING CC           ,,      430.00 ,     1225.00 ,      795.00 ,      184.88
+X0001 ,X-PRESS COMMERCIAL COMPONENTS CC   ,,      866.80 ,     1260.00 ,      393.20 ,       45.36
+F0031 ,F.S.ENGINEERING CC                 ,,     1470.30 ,     2150.00 ,      679.70 ,       46.23
+R0032 ,RAPID DAWN T/A SUPER SPARES        ,,     1112.98 ,     2311.52 ,     1198.54 ,      107.69
+R0038 ,RAINO'S SPARES CC                  ,,        0.00 ,    (2440.00),    (2440.00),        0.00
+G0008 ,GEAR SET TRADING ENTERPRISES C.C   ,,     1391.44 ,     2450.40 ,     1058.96 ,       76.11
+B0034 ,B.I.NEWCASTLE                      ,,     1800.70 ,     3148.06 ,     1347.36 ,       74.82
+COD017,NATIONAL SOLDIER CO T/A SOHUMSERVIC,,     1359.96 ,     3658.94 ,     2298.98 ,      169.05
+S0028 ,SPARES WORLD PLEIN STR             ,,     2144.73 ,     3764.35 ,     1619.62 ,       75.52
+B0072 ,B.I.WEST RAND                      ,,     2519.94 ,     3814.46 ,     1294.52 ,       51.37
+B0113 ,BED HOLDINGS (PTY)LTD              ,,     3128.31 ,     4161.30 ,     1032.99 ,       33.02
+C0008 ,CARMENS SUPPLIES CC                ,,     2979.75 ,     4204.00 ,     1224.25 ,       41.09
+B0116 ,B.I.PHALABORWA                     ,,     3838.32 ,     5847.50 ,     2009.18 ,       52.35
+B0011 ,BEARCHEM REQUISITES WELKOM CC      ,,     3813.20 ,     6410.12 ,     2596.92 ,       68.10
+A0008 ,ASA PRODUCTS (PTY) LTD             ,,     3862.65 ,     7094.66 ,     3232.01 ,       83.67
+B0049 ,B.I.PIETERMARITZBURG               ,,     5279.42 ,     7775.30 ,     2495.88 ,       47.28
+B0043 ,B.I.GERMISTON                      ,,     4890.19 ,     7905.88 ,     3015.69 ,       61.67
+B0035 ,B.I.NELSPRUIT                      ,,     5241.60 ,     9080.07 ,     3838.47 ,       73.23
+B0070 ,B.I.THABAZIMBI                     ,,     6606.78 ,     9665.96 ,     3059.18 ,       46.30
+T0021 ,TERETTIE T/A BOLT & TOOL AFRICA    ,,     5933.20 ,     9942.54 ,     4009.34 ,       67.57
+B0038 ,B.I.VEREENIGING                    ,,     5651.11 ,    10058.58 ,     4407.47 ,       77.99
+B0053 ,B.I.GROOTEGELUK                    ,,     6616.40 ,    10460.00 ,     3843.60 ,       58.09
+A0030 ,A1 BEARINGS CC                     ,,     6814.00 ,    11559.62 ,     4745.62 ,       69.65
+B105  ,BEARING LYNK                       ,,     6339.25 ,    11628.23 ,     5288.98 ,       83.43
+B0047 ,B.I.JACOBS                         ,,     9168.60 ,    11817.32 ,     2648.72 ,       28.89
+C0021 ,CITI BEARINGS & SEALS RUSTENBURG PT,,     8595.33 ,    15458.55 ,     6863.22 ,       79.85
+B0087 ,BAOBAB SUPER SPARES                ,,     9944.18 ,    15472.50 ,     5528.32 ,       55.59
+B0046 ,B.I.LICHTENBURG                    ,,     8590.44 ,    15579.33 ,     6988.89 ,       81.36
+B0031 ,B.I.PINETOWN                       ,,     8391.52 ,    16831.94 ,     8440.42 ,      100.58
+B0030 ,B.I.KROONSTAD                      ,,    11117.15 ,    17179.49 ,     6062.34 ,       54.53
+P0015 ,PHAMBILE BEARING SUPPLIES cc       ,,    11404.02 ,    17722.40 ,     6318.38 ,       55.40
+COD048,CASH SALE-OLD POTCH                ,,    12457.51 ,    20899.59 ,     8442.08 ,       67.77
+G0004 ,L NORMAND GLOBAL ENTERPRISE CC     ,,    14139.53 ,    21325.55 ,     7186.02 ,       50.82
+S0022 ,SPARES CITY                        ,,    11606.71 ,    21759.93 ,    10153.22 ,       87.48
+E0009 ,ENGINE SPARES SPECIALISTS          ,,    13918.92 ,    22185.68 ,     8266.76 ,       59.39
+B0102 ,B.I.BLOEMFONTEIN                   ,,    14654.30 ,    23602.58 ,     8948.28 ,       61.06
+P0013 ,PUMPS & TRANSMISSION CC            ,,    15366.63 ,    23948.66 ,     8582.03 ,       55.85
+E0002 ,ERLEMANN GEARBOX ENGINEERING       ,,    16817.92 ,    24851.88 ,     8033.96 ,       47.77
+B0111 ,B.I.CAPE TOWN                      ,,     7380.91 ,    25351.67 ,    17970.76 ,      243.48
+B0048 ,B.I.RICHARDS BAY                   ,,    17685.82 ,    27251.06 ,     9565.24 ,       54.08
+S0036 ,SMYCO INDUSTRIAL PRODUCTS (PTY) LTD,,    17473.39 ,    28598.00 ,    11124.61 ,       63.67
+B0108 ,BERAS MOTOR SPARES CC              ,,    19596.73 ,    30259.35 ,    10662.62 ,       54.41
+U0004 ,UMZANZI FORKLIFT SPARES& BEARING RE,,    21659.61 ,    30863.77 ,     9204.16 ,       42.49
+M0015 ,MR MAG MAN                         ,,    24517.78 ,    33749.54 ,     9231.76 ,       37.65
+B0051 ,B.I.ISITHEBE                       ,,    18791.51 ,    34472.34 ,    15680.83 ,       83.45
+B0026 ,B.I.BETHAL                         ,,    22513.24 ,    35679.68 ,    13166.44 ,       58.48
+T0014 ,TWS AUTO SPARES T/ATAXI WHOLESALE S,,    27820.13 ,    41005.05 ,    13184.92 ,       47.39
+O0003 ,FRANKLIN ELECTRIC BOTSWANA(PTY)LTD ,,    30040.38 ,    41055.00 ,    11014.62 ,       36.67
+R0028 ,ROTARY BEARINGS & IND SUPPLIES (PTY,,    25563.67 ,    42125.03 ,    16561.36 ,       64.78
+COD016,CASH SALE APEX SERVICE STATION     ,,    31594.27 ,    44266.00 ,    12671.73 ,       40.11
+B0097 ,B.I.NAMIBIA (PTY) LTD              ,,    27792.77 ,    44766.57 ,    16973.80 ,       61.07
+M0016 ,MBC TRANSMISSION SUPPLIES          ,,    30946.77 ,    45057.07 ,    14110.30 ,       45.60
+B0050 ,B.I.POLOKWANE                      ,,    26248.90 ,    45843.41 ,    19594.51 ,       74.65
+T0017 ,TWK AGRI (PTY) LTD                 ,,    30930.50 ,    46840.10 ,    15909.60 ,       51.44
+B0006 ,HESBOK (PTY) LTD T/A BOK BEARINGS  ,,    29061.85 ,    46961.97 ,    17900.12 ,       61.59
+R0019 ,REELIN INVESTMENTS DBN             ,,    31543.42 ,    47030.12 ,    15486.70 ,       49.10
+R0037 ,RUQ BEARING SEALS & IND SUPPLIES CC,,    24354.06 ,    49218.28 ,    24864.22 ,      102.09
+B0095 ,B.I.BRITS                          ,,    29043.47 ,    50020.30 ,    20976.83 ,       72.23
+B0120 ,ANT BEARINGS (PTY) LTD             ,,    31711.99 ,    50302.54 ,    18590.55 ,       58.62
+S0024 ,SILVER SOLUTIONS 1258 CC T/A BTO   ,,    28145.81 ,    53112.74 ,    24966.93 ,       88.71
+COD029,CASH SALES BEARING EXPRESS         ,,    34767.11 ,    55632.75 ,    20865.64 ,       60.02
+P0005 ,PRESTIGE PARTS WORLD               ,,    36452.66 ,    56033.32 ,    19580.66 ,       53.72
+COD055,COMBINATION SPARES                 ,,    34906.44 ,    57233.70 ,    22327.26 ,       63.96
+K0003 ,KWEST (PIETERSBURG) CC             ,,    37707.99 ,    57498.78 ,    19790.79 ,       52.48
+B0021 ,BEE-LINE BEARINGS CC               ,,    41527.85 ,    57641.50 ,    16113.65 ,       38.80
+B0109 ,COMMERCIAL TRUCK PARTS AFRICA CC   ,,    40688.80 ,    58200.76 ,    17511.96 ,       43.04
+S0037 ,SALETHA INDUSTRAIL & HYDR (PTY) LTD,,    32256.66 ,    58597.66 ,    26341.00 ,       81.66
+L0003 ,LA AXLES CC                        ,,    38833.61 ,    59185.04 ,    20351.43 ,       52.41
+B0018 ,BEARING & ACCESORIES CC            ,,    40293.56 ,    59890.49 ,    19596.93 ,       48.64
+COO16 ,C4U MOTORS                         ,,    38686.69 ,    63134.94 ,    24448.25 ,       63.20
+S0029 ,RIANARD SPARES T/A SCHREIBER       ,,    42510.96 ,    63292.90 ,    20781.94 ,       48.89
+B0036 ,B.I.RUSTENBURG                     ,,    37542.21 ,    63609.36 ,    26067.15 ,       69.43
+B0041 ,B.I.PRETORIA                       ,,    39572.94 ,    63642.78 ,    24069.84 ,       60.82
+G0001 ,GENERAL BEARINGS CC                ,,    42990.93 ,    68199.08 ,    25208.15 ,       58.64
+S0006 ,SEALS EXCELLANCE CC                ,,    38395.20 ,    73843.13 ,    35447.93 ,       92.32
+B0117 ,B.I.ERMELO                         ,,    49076.44 ,    76757.10 ,    27680.66 ,       56.40
+B0110 ,BOLT & ENGINEERING DIST (PLAT PROV),,    47945.00 ,    78009.69 ,    30064.69 ,       62.71
+E0011 ,EARLYMOON TRADING 291 CC           ,,    48290.00 ,    78582.00 ,    30292.00 ,       62.73
+K0002 ,K.O.SCHIMMEL T/A MB TRUCK SPARES   ,,    52819.33 ,    79137.95 ,    26318.62 ,       49.83
+D0004 ,DUNALAISTAIR BEARINGS T/A BEARTECH ,,    51254.38 ,    79232.49 ,    27978.11 ,       54.59
+B0032 ,B.I.KIMBERLEY                      ,,    46750.85 ,    79876.61 ,    33125.76 ,       70.86
+B0077 ,BEARING HOUSE (PRETORIA) CC        ,,    50504.25 ,    83063.51 ,    32559.26 ,       64.47
+B0106 ,BEARINGS DISTRIBUTORS WESKUS PTY LT,,    53782.55 ,    85145.49 ,    31362.94 ,       58.31
+B0071 ,B.I.STEELPOORT                     ,,    59471.70 ,    88645.40 ,    29173.70 ,       49.05
+B0042 ,B.I.EAST RAND                      ,,    63080.88 ,    92080.70 ,    28999.82 ,       45.97
+S0026 ,SEALS GALORE CC                    ,,    59127.37 ,    92188.08 ,    33060.71 ,       55.91
+C0010 ,CITI BEARINGS & SEALS C.C GERMISTON,,    61948.87 ,    94051.88 ,    32103.01 ,       51.82
+N0005 ,N.C.ADHESIVES & ENG. SUPPLIES      ,,    59495.44 ,    94672.76 ,    35177.32 ,       59.13
+B0029 ,B.I.WITBANK                        ,,    63599.85 ,    97787.64 ,    34187.79 ,       53.75
+B0039 ,B.I.SPRINGS                        ,,    61289.49 ,   100542.29 ,    39252.80 ,       64.04
+B0054 ,BEARING ENTERPRISE & IND. H/WARE CC,,    63597.86 ,   106234.38 ,    42636.52 ,       67.04
+H0008 ,HANIFA AKOO TRUST TA BRG INNOVATION,,    65424.70 ,   108398.42 ,    42973.72 ,       65.68
+T0001 ,T.F.M.INDUSTRIES (PTY) LTD         ,,    63068.42 ,   111499.36 ,    48430.94 ,       76.79
+C0020 ,CITI BEARINGS & SEALS SA (PTY) LTD ,,    72783.69 ,   116871.21 ,    44087.52 ,       60.57
+R0017 ,RECORD ENGINEERING SALES CC        ,,    76661.96 ,   117087.73 ,    40425.77 ,       52.73
+
+,TOTAL :#$#font-bold=true#$#font-size=12,,  2551821.50 #$#font-bold=true#$#font-size=12,  4075664.76 #$#font-bold=true#$#font-size=12,  1523843.26 #$#font-bold=true#$#font-size=12,       59.72 #$#font-bold=true#$#font-size=12
