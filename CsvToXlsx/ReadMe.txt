@@ -3,19 +3,21 @@
 Call the program from the CMD.
 
 Syntax:
-"File path > Desired Sheet Name > Date Format" output file name
+"File path > Desired Sheet Name > Date Format > column size" output file name
+
+column size options : auto , 15 (any valid interger) , custom
 
 =====================================================================================================================================================================
 
 1 file
 
-CsvToXlsx.exe "C:\temp-copies\test.csv>sheet 1>dd-mm-yyyy" "C:\temp-copies\combined.xlsx"
+CsvToXlsx.exe "C:\temp-copies\test.csv>sheet 1>dd-mm-yyyy>auto" "C:\temp-copies\combined.xlsx"
 
 =====================================================================================================================================================================
 
 Multiple files - Each on its own sheet
 
-CsvToXlsx.exe "C:\temp-copies\test.csv:sheet 1>dd-mm-yyyy"  "C:\temp-copies\Bulk Note.csv:sheet 2>dd-mm-yyyy" "C:\temp-copies\combined.xlsx"
+CsvToXlsx.exe "C:\temp-copies\test.csv:sheet 1>dd-mm-yyyy>auto"  "C:\temp-copies\Bulk Note.csv:sheet 2>dd-mm-yyyy>12" "C:\temp-copies\combined.xlsx"
 
 =====================================================================================================================================================================
 

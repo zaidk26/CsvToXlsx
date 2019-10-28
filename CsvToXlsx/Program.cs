@@ -23,7 +23,7 @@ namespace CsvToXlsx
                 foreach(string csvFileInfo in args)
                 {
                     string[] fileInfo = csvFileInfo.Split('>');
-                    CreateSheet(fileInfo[0],fileInfo[1],fileInfo[2],package);
+                    CreateSheet(fileInfo[0],fileInfo[1],fileInfo[2], fileInfo[3], package);
                 }                
 
                 FileInfo file = new FileInfo(outputFile);
@@ -41,7 +41,7 @@ namespace CsvToXlsx
         /// <param name="csvFileLink"></param>
         /// <param name="sheetName"></param>
         /// <param name="package"></param>
-        private static void CreateSheet(string csvFileLink,string sheetName,string dateFormat, ExcelPackage package)
+        private static void CreateSheet(string csvFileLink,string sheetName,string dateFormat,string columnSize, ExcelPackage package)
         {
             CultureInfo provider = CultureInfo.InvariantCulture;
 
@@ -49,11 +49,11 @@ namespace CsvToXlsx
             ExcelWorksheet worksheet = package.Workbook.Worksheets.Add(sheetName);
             //Add the headers
 
-            autofit = true;
+          
 
-            CsvFileParser(csvFileLink, dateFormat, provider, worksheet);
+            CsvFileParser(csvFileLink, dateFormat,columnSize, provider, worksheet);
 
-            if (autofit)
+            if (columnSize.Equals("auto"))
             {
                 worksheet.Cells.AutoFitColumns();
             }
@@ -68,7 +68,7 @@ namespace CsvToXlsx
         /// <param name="csvFileLink"></param>
         /// <param name="provider"></param>
         /// <param name="worksheet"></param>
-        private static void CsvFileParser(string csvFileLink,string dateFormat, CultureInfo provider, ExcelWorksheet worksheet)
+        private static void CsvFileParser(string csvFileLink,string dateFormat,string columnSize, CultureInfo provider, ExcelWorksheet worksheet)
         {
             using (TextFieldParser parser = new TextFieldParser(csvFileLink))
             {
@@ -107,6 +107,12 @@ namespace CsvToXlsx
                         {
                             FormatAndInsertValue(provider, worksheet, row, cell, field, dateFormat);
                         }
+
+                        //size columns if fixed size passed
+                        if(!columnSize.Equals("auto") && !columnSize.Equals("custom"))
+                        {
+                            worksheet.Column(cell).Width = double.Parse(columnSize);
+                        }
                         
                         cell++;
                     }
@@ -127,8 +133,14 @@ namespace CsvToXlsx
         /// <param name="field"></param>
         private static void FormatAndInsertValue(CultureInfo provider, ExcelWorksheet worksheet, int row, int cell, string field,string dateFormat)
         {
+            //format 0 to int
+            if (Regex.Match(field, @"^0$").Success)
+            {
+                worksheet.Cells[row, cell].Style.Numberformat.Format = "0";
+                worksheet.Cells[row, cell].Value = Int16.Parse(field);
+            }
             //format Currency
-            if (Regex.Match(field, @"^[0-9]+\.[0-9][0-9]$").Success)
+            else if (Regex.Match(field, @"^[0-9]+\.[0-9][0-9]$").Success)
             {
                 worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0.00";
                 worksheet.Cells[row, cell].Value = double.Parse(field);
@@ -210,7 +222,6 @@ namespace CsvToXlsx
                 switch (property)
                 {
                     case "column-width":
-                        autofit = false;
                         worksheet.Column(cell).Width = double.Parse(value);
                         break;
 
