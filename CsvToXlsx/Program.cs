@@ -32,7 +32,8 @@ namespace CsvToXlsx
 
             }
 
-            System.Diagnostics.Process.Start(outputFile);
+            //un comment to auto open file
+            //System.Diagnostics.Process.Start(outputFile);
         }
 
         /// <summary>
@@ -134,72 +135,79 @@ namespace CsvToXlsx
         /// <param name="field"></param>
         private static void FormatAndInsertValue(CultureInfo provider, ExcelWorksheet worksheet, int row, int cell, string field,string dateFormat)
         {
-         
-            //format 0 to int
-            if (Regex.Match(field, @"^0$").Success)
-            {
-                worksheet.Cells[row, cell].Style.Numberformat.Format = "0";
-                worksheet.Cells[row, cell].Value = Int16.Parse(field);
-            }
-            //format Currency
-            else if (Regex.Match(field, @"^[0-9]+\.[0-9][0-9]$").Success)
-            {
-                worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0.00";
-                worksheet.Cells[row, cell].Value = double.Parse(field);
-            }
-            //format Currency Negative
-            else if (Regex.Match(field, @"^\([0-9]+\.[0-9][0-9]\)$").Success)
-            {
-                worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0.00";
-                worksheet.Cells[row, cell].Value = double.Parse(field.Replace("(", "-").Replace(")", ""));
-            }
-            //format Float Number
-            else if (Regex.Match(field, @"^[0-9]+\.[0-9][0-9][0-9]+$").Success)
-            {
-                string[] parts = field.Split('.');
-                string points = "";
-                for (int i = 0; i < parts[1].Length; i++)
-                {
-                    points += "0";
-                }
-                worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0." + points;
-                worksheet.Cells[row, cell].Value = double.Parse(field);
-            }
-            //format Float Number Negative
-            else if (Regex.Match(field, @"^\([0-9]+\.[0-9][0-9][0-9]+\)$").Success)
-            {
-                string[] parts = field.Split('.');
-                string points = "";
-                for (int i = 0; i < parts[1].Replace(")","").Length; i++)
-                {
-                    points += "0";
-                }
-                worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0." + points;
-                worksheet.Cells[row, cell].Value = double.Parse(field.Replace("(", "-").Replace(")", ""));
-            }
-            //format Interger
-            else if (Regex.Match(field, @"^[1-9]([0-9]+)?$").Success && field.Length < 16)
-            {
-                worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0";
-                worksheet.Cells[row, cell].Value = Int64.Parse(field);
-            }
-            //format Negative Interger
-            else if (Regex.Match(field, @"^\([1-9]([0-9]+)?\)$").Success && field.Length < 16)
-            {
-                worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0";
-                worksheet.Cells[row, cell].Value = Int64.Parse(field.Replace("(","-").Replace(")",""));
-            }
-            //format Date
-            else if (Regex.Match(field, @"^\d\d\/\d\d\/\d\d\d\d$").Success)
+            try
             {
 
-                worksheet.Cells[row, cell].Style.Numberformat.Format = dateFormat;
-                worksheet.Cells[row, cell].Value = DateTime.ParseExact(field, "dd/mm/yyyy", provider);
-            }
-            //its text
-            else
+                //format 0 to int
+                if (Regex.Match(field, @"^0$").Success)
+                {
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "0";
+                    worksheet.Cells[row, cell].Value = Int16.Parse(field);
+                }
+                //format Currency
+                else if (Regex.Match(field, @"^[0-9]+\.[0-9][0-9]$").Success)
+                {
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0.00";
+                    worksheet.Cells[row, cell].Value = double.Parse(field);
+                }
+                //format Currency Negative
+                else if (Regex.Match(field, @"^\([0-9]+\.[0-9][0-9]\)$").Success)
+                {
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0.00";
+                    worksheet.Cells[row, cell].Value = double.Parse(field.Replace("(", "-").Replace(")", ""));
+                }
+                //format Float Number
+                else if (Regex.Match(field, @"^[0-9]+\.[0-9][0-9][0-9]+$").Success)
+                {
+                    string[] parts = field.Split('.');
+                    string points = "";
+                    for (int i = 0; i < parts[1].Length; i++)
+                    {
+                        points += "0";
+                    }
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0." + points;
+                    worksheet.Cells[row, cell].Value = double.Parse(field);
+                }
+                //format Float Number Negative
+                else if (Regex.Match(field, @"^\([0-9]+\.[0-9][0-9][0-9]+\)$").Success)
+                {
+                    string[] parts = field.Split('.');
+                    string points = "";
+                    for (int i = 0; i < parts[1].Replace(")", "").Length; i++)
+                    {
+                        points += "0";
+                    }
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0." + points;
+                    worksheet.Cells[row, cell].Value = double.Parse(field.Replace("(", "-").Replace(")", ""));
+                }
+                //format Interger
+                else if (Regex.Match(field, @"^[1-9]([0-9]+)?$").Success && field.Length < 16)
+                {
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0";
+                    worksheet.Cells[row, cell].Value = Int64.Parse(field);
+                }
+                //format Negative Interger
+                else if (Regex.Match(field, @"^\([1-9]([0-9]+)?\)$").Success && field.Length < 16)
+                {
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0";
+                    worksheet.Cells[row, cell].Value = Int64.Parse(field.Replace("(", "-").Replace(")", ""));
+                }
+                //format Date
+                else if (Regex.Match(field, @"^\d\d\/\d\d\/\d\d\d\d$").Success)
+                {
+
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = dateFormat;
+                    worksheet.Cells[row, cell].Value = DateTime.ParseExact(field, "dd/mm/yyyy", provider);
+                }
+                //its text
+                else
+                {
+                    worksheet.Cells[row, cell].Value = field;
+                }
+
+            }catch(Exception ex)
             {
-                worksheet.Cells[row, cell].Value = field;
+                worksheet.Cells[row, cell].Value = ex.ToString();
             }
         }
 
