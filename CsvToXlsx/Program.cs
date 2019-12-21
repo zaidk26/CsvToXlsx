@@ -12,11 +12,13 @@ namespace CsvToXlsx
 {
     class Program
     {
+        
        
         static void Main(string[] args)
         {
             string outputFile = args[args.Length - 1];
             Array.Resize(ref args, args.Length - 1);
+            string openFile = "N";
 
             using (var package = new ExcelPackage())
             {
@@ -24,6 +26,11 @@ namespace CsvToXlsx
                 {
                     string[] fileInfo = csvFileInfo.Split('>');
                     CreateSheet(fileInfo[0],fileInfo[1],fileInfo[2], fileInfo[3], package);
+                    if(fileInfo.Length >= 5)
+                    {
+                        openFile = fileInfo[4];
+                    }
+                    
                 }                
 
                 FileInfo file = new FileInfo(outputFile);
@@ -32,8 +39,11 @@ namespace CsvToXlsx
 
             }
 
-            //un comment to auto open file
-            //System.Diagnostics.Process.Start(outputFile);
+            if (openFile.Equals("Y"))
+            {
+                System.Diagnostics.Process.Start(outputFile);
+            }
+            
         }
 
         /// <summary>
@@ -223,77 +233,85 @@ namespace CsvToXlsx
         /// <param name="field"></param>
         private static void StyleCell(ExcelWorksheet worksheet, int row, int cell, string[] styles)
         {
-            foreach (string style in styles)
+            try
             {
-                string[] statement = style.Split('=');
-                string property = statement[0];
-                string value = statement[1];
-
-                switch (property)
+                foreach (string style in styles)
                 {
-                    case "column-width":
-                        worksheet.Column(cell).Width = double.Parse(value);
-                        break;
+                    string[] statement = style.Split('=');
+                    string property = statement[0];
+                    string value = statement[1];
 
-                    case "column-freeze":
-                        worksheet.View.FreezePanes(row+1, cell);
-                        break;
+                    switch (property)
+                    {
+                        case "column-width":
+                            worksheet.Column(cell).Width = double.Parse(value);
+                            break;
 
-
-                    case "column-border":
-                        switch (value)
-                        {
-                            case "left":
-                                worksheet.Cells[row, cell].Style.Border.Left.Style = ExcelBorderStyle.Medium;
-                                break;
-                            case "right":
-                                worksheet.Cells[row, cell].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-                                break;
-                            case "top":
-                                worksheet.Cells[row, cell].Style.Border.Top.Style = ExcelBorderStyle.Medium;
-                                break;
-                            case "bottom":
-                                worksheet.Cells[row, cell].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
-                                break;
-                            case "all":
-                                worksheet.Cells[row, cell].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
-                                worksheet.Cells[row, cell].Style.Border.Top.Style = ExcelBorderStyle.Medium;
-                                worksheet.Cells[row, cell].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-                                worksheet.Cells[row, cell].Style.Border.Left.Style = ExcelBorderStyle.Medium;
-                                break;
-                        }
-                        
-                        break;
-
-                    case "column-background":
-                        worksheet.Cells[row, cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                        worksheet.Cells[row, cell].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml(value));
-                        break;
+                        case "column-freeze":
+                            worksheet.View.FreezePanes(row + 1, cell);
+                            break;
 
 
+                        case "column-border":
+                            switch (value)
+                            {
+                                case "left":
+                                    worksheet.Cells[row, cell].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+                                    break;
+                                case "right":
+                                    worksheet.Cells[row, cell].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+                                    break;
+                                case "top":
+                                    worksheet.Cells[row, cell].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+                                    break;
+                                case "bottom":
+                                    worksheet.Cells[row, cell].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+                                    break;
+                                case "all":
+                                    worksheet.Cells[row, cell].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+                                    worksheet.Cells[row, cell].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+                                    worksheet.Cells[row, cell].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+                                    worksheet.Cells[row, cell].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+                                    break;
+                            }
 
-                    case "font-bold":
-                        worksheet.Cells[row, cell].Style.Font.Bold = true;
-                        break;
+                            break;
 
-                    case "font-italic":
-                        worksheet.Cells[row, cell].Style.Font.Italic = true;
-                        break;
+                        case "column-background":
+                            worksheet.Cells[row, cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                            worksheet.Cells[row, cell].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml(value));
+                            break;
 
-                    case "font-underline":
-                        worksheet.Cells[row, cell].Style.Font.UnderLine = true;
-                        break;
 
-                    case "font-color":
-                        worksheet.Cells[row, cell].Style.Font.Color.SetColor(ColorTranslator.FromHtml(value));
-                        break;
 
-                    case "font-size":
-                        worksheet.Cells[row, cell].Style.Font.Size = float.Parse(value);
-                        break;
+                        case "font-bold":
+                            worksheet.Cells[row, cell].Style.Font.Bold = true;
+                            break;
 
+                        case "font-italic":
+                            worksheet.Cells[row, cell].Style.Font.Italic = true;
+                            break;
+
+                        case "font-underline":
+                            worksheet.Cells[row, cell].Style.Font.UnderLine = true;
+                            break;
+
+                        case "font-color":
+                            worksheet.Cells[row, cell].Style.Font.Color.SetColor(ColorTranslator.FromHtml(value));
+                            break;
+
+                        case "font-size":
+                            worksheet.Cells[row, cell].Style.Font.Size = float.Parse(value);
+                            break;
+
+                    }
                 }
             }
+            catch(Exception ex)
+            {
+
+            }
+           
         }
     }
 }
