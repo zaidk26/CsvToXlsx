@@ -34,6 +34,8 @@ Auto Formating Of Cells
 
 01/12/2019  => Formated to Date (enter desired format in CMD)
 
+
+* To force a field which has digits to format as text, append to field: !#TEXT#!
 *numbers starting with 0 or greater that 15 characters are processed as text
 
 =====================================================================================================================================================================

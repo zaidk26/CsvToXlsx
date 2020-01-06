@@ -147,9 +147,14 @@ namespace CsvToXlsx
         {
             try
             {
-
+                //if its digits but must be set as text field
+                if (field.Contains("!#TEXT#!"))
+                {
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "@";
+                    worksheet.Cells[row, cell].Value = field.Replace("!#TEXT#!","");
+                }
                 //format 0 to int
-                if (Regex.Match(field, @"^0$").Success)
+                else if (Regex.Match(field, @"^0$").Success)
                 {
                     worksheet.Cells[row, cell].Style.Numberformat.Format = "0";
                     worksheet.Cells[row, cell].Value = Int16.Parse(field);
