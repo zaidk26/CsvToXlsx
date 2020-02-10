@@ -5,7 +5,7 @@ Call the program from the CMD.
 Syntax:
 "File path > Desired Sheet Name > Date Format > column size > open file" output file name
 
-column size options : auto , 15 (any valid interger) , custom , Y
+column size options : auto , 15 (any valid interger) , custom
 
 =====================================================================================================================================================================
 
