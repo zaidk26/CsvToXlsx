@@ -3,7 +3,7 @@
 Call the program from the CMD.
 
 Syntax:
-"File path > Desired Sheet Name > Date Format > column size > open file" output file name
+"File path > Desired Sheet Name > Date Format > column size > open file > max columns" output file name
 
 column size options : auto , 15 (any valid interger) , custom
 
@@ -11,14 +11,19 @@ column size options : auto , 15 (any valid interger) , custom
 
 1 file
 
-CsvToXlsx.exe "C:\temp-copies\test.csv>sheet 1>dd-mm-yyyy>auto>Y" "C:\temp-copies\combined.xlsx"
+CsvToXlsx.exe "C:\temp-copies\test.csv>sheet 1>dd-mm-yyyy>auto>Y>10" "C:\temp-copies\combined.xlsx"
 
 =====================================================================================================================================================================
 
 Multiple files - Each on its own sheet
 
-CsvToXlsx.exe "C:\temp-copies\test.csv:sheet 1>dd-mm-yyyy>auto>N"  "C:\temp-copies\Bulk Note.csv:sheet 2>dd-mm-yyyy>12>N" "C:\temp-copies\combined.xlsx"
+CsvToXlsx.exe "C:\temp-copies\test.csv:sheet 1>dd-mm-yyyy>auto>N>20"  "C:\temp-copies\Bulk Note.csv:sheet 2>dd-mm-yyyy>12>N>100" "C:\temp-copies\combined.xlsx"
 
+=====================================================================================================================================================================
+NOTE:
+The Parser does not recognize blank lines as a row.
+
+To create a blank row at the word in column !!!BLANK_ROW 
 =====================================================================================================================================================================
 
 Auto Formating Of Cells

@@ -19,18 +19,30 @@ namespace CsvToXlsx
             string outputFile = args[args.Length - 1];
             Array.Resize(ref args, args.Length - 1);
             string openFile = "N";
+            int maxColumns = 1000;
 
             using (var package = new ExcelPackage())
             {
                 foreach(string csvFileInfo in args)
                 {
                     string[] fileInfo = csvFileInfo.Split('>');
-                    CreateSheet(fileInfo[0],fileInfo[1],fileInfo[2], fileInfo[3], package);
-                    if(fileInfo.Length >= 5)
+
+                    if (fileInfo.Length > 4)
                     {
                         openFile = fileInfo[4];
                     }
+
+                    if (fileInfo.Length > 5)
+                    {
+                        maxColumns = int.Parse(fileInfo[5]);
+                    }
+
                     
+                    CreateSheet(fileInfo[0],fileInfo[1],fileInfo[2], fileInfo[3], maxColumns, package);
+
+                    
+                    
+
                 }                
 
                 FileInfo file = new FileInfo(outputFile);
@@ -54,7 +66,7 @@ namespace CsvToXlsx
         /// <param name="csvFileLink"></param>
         /// <param name="sheetName"></param>
         /// <param name="package"></param>
-        private static void CreateSheet(string csvFileLink,string sheetName,string dateFormat,string columnSize, ExcelPackage package)
+        private static void CreateSheet(string csvFileLink,string sheetName,string dateFormat,string columnSize,int maxColumns, ExcelPackage package)
         {
             CultureInfo provider = CultureInfo.InvariantCulture;
 
@@ -63,7 +75,7 @@ namespace CsvToXlsx
             //Add the headers
 
           
-            CsvFileParser(csvFileLink, dateFormat,columnSize, provider, worksheet);
+            CsvFileParser(csvFileLink, dateFormat,columnSize, provider,maxColumns, worksheet);
 
             if (columnSize.Equals("auto"))
             {
@@ -80,7 +92,7 @@ namespace CsvToXlsx
         /// <param name="csvFileLink"></param>
         /// <param name="provider"></param>
         /// <param name="worksheet"></param>
-        private static void CsvFileParser(string csvFileLink,string dateFormat,string columnSize, CultureInfo provider, ExcelWorksheet worksheet)
+        private static void CsvFileParser(string csvFileLink,string dateFormat,string columnSize, CultureInfo provider,int maxColumns, ExcelWorksheet worksheet)
         {
             using (TextFieldParser parser = new TextFieldParser(csvFileLink))
             {
@@ -96,7 +108,7 @@ namespace CsvToXlsx
 
                     if (parser.LineNumber <= 0)
                     {
-                        row++;
+                        //row++;
                     }
                     else
                     {
@@ -104,30 +116,36 @@ namespace CsvToXlsx
                     }
 
                     //Add data to sheet
-                    foreach (string field in fields)
-                    {
-                        //check if has styling
-                        if (field.Contains("#$#"))
+                    
+                        foreach (string field in fields)
                         {
-                            string[] fieldData = Regex.Split(field,@"#\$#"); 
-                            
-                            FormatAndInsertValue(provider, worksheet, row, cell, fieldData[0], dateFormat);
-                            
-                            StyleCell(worksheet, row, cell, fieldData.Where((v, i) => i != 0).ToArray());
-                        }
-                        else
-                        {
-                            FormatAndInsertValue(provider, worksheet, row, cell, field, dateFormat);
-                        }
+                            if (cell <= maxColumns)
+                            {
+                                //check if has styling
+                                if (field.Contains("#$#"))
+                                {
+                                    string[] fieldData = Regex.Split(field, @"#\$#");
 
-                        //size columns if fixed size passed
-                        if(!columnSize.Equals("auto") && !columnSize.Equals("custom"))
-                        {
-                            worksheet.Column(cell).Width = double.Parse(columnSize);
+                                    FormatAndInsertValue(provider, worksheet, row, cell, fieldData[0], dateFormat);
+
+                                    StyleCell(worksheet, row, cell, fieldData.Where((v, i) => i != 0).ToArray());
+                                }
+                                else
+                                {
+                                    FormatAndInsertValue(provider, worksheet, row, cell, field, dateFormat);
+                                }
+
+                                //size columns if fixed size passed
+                                if (!columnSize.Equals("auto") && !columnSize.Equals("custom"))
+                                {
+                                    worksheet.Column(cell).Width = double.Parse(columnSize);
+                                }
+
+                                cell++;
+                            }
                         }
-                        
-                        cell++;
-                    }
+                    
+                    
 
                     row++;
                 }
@@ -152,6 +170,11 @@ namespace CsvToXlsx
                 {
                     worksheet.Cells[row, cell].Style.Numberformat.Format = "@";
                     worksheet.Cells[row, cell].Value = field.Replace("!#TEXT#!","");
+                }
+                //blank row
+                else if (field.Contains("!!!BLANK_ROW"))
+                {
+                    worksheet.Cells[row, cell].Value = "";
                 }
                 //format 0 to int
                 else if (Regex.Match(field, @"^0$").Success)
