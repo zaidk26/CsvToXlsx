@@ -245,7 +245,8 @@ namespace CsvToXlsx
 
             }catch(Exception ex)
             {
-                worksheet.Cells[row, cell].Value = ex.ToString();
+                worksheet.Cells[row, cell].Value = field;
+                //worksheet.Cells[row, cell].Value = ex.ToString(); //show exception
             }
         }
 
