@@ -311,6 +311,10 @@ namespace CsvToXlsx
                             worksheet.Cells[row, cell].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml(value));
                             break;
 
+                        case "column-merge":                            
+                            worksheet.Cells[row, cell, row, cell + int.Parse(value)].Merge = true;
+                            break;
+
 
 
                         case "font-bold":

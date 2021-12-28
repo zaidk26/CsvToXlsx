@@ -58,6 +58,8 @@ column-width=120  (if a width is specified for 1 column it should be specified f
 
 column-freeze=true
 
+column-merge=2 (merge the next 2 cells)
+
 column-border=right
 column-border=left
 column-border=top

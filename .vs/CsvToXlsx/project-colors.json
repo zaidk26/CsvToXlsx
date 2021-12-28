@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "d2294611-636c-46c1-9a4f-824ccf68c7e8": {
+      "ProjectGuid": "d2294611-636c-46c1-9a4f-824ccf68c7e8",
+      "DisplayName": "CsvToXlsx",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
