@@ -272,6 +272,11 @@ namespace CsvToXlsx
 
                     switch (property)
                     {
+
+                        case "column-merge":
+                            worksheet.Cells[row, cell, row, cell + int.Parse(value)].Merge = true;
+                            break;
+
                         case "column-width":
                             worksheet.Column(cell).Width = double.Parse(value);
                             break;
@@ -311,9 +316,7 @@ namespace CsvToXlsx
                             worksheet.Cells[row, cell].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml(value));
                             break;
 
-                        case "column-merge":                            
-                            worksheet.Cells[row, cell, row, cell + int.Parse(value)].Merge = true;
-                            break;
+                        
 
 
 
@@ -337,7 +340,62 @@ namespace CsvToXlsx
                             worksheet.Cells[row, cell].Style.Font.Size = float.Parse(value);
                             break;
 
+
+                        case "column-horizontal-align":
+                            var align = ExcelHorizontalAlignment.Center;
+
+                            switch (value)
+                            {
+                                case "CenterContinuous":
+                                    align = ExcelHorizontalAlignment.CenterContinuous;
+                                    break;
+                                case "Left":
+                                    align = ExcelHorizontalAlignment.Left;
+                                    break;
+                                case "Right":
+                                    align = ExcelHorizontalAlignment.Right;
+                                    break;
+                                case "Fill":
+                                    align = ExcelHorizontalAlignment.Fill;
+                                    break;
+                                case "Justify":
+                                    align = ExcelHorizontalAlignment.Justify;
+                                    break;
+                                case "Distributed":
+                                    align = ExcelHorizontalAlignment.Distributed;
+                                    break;
+                            }
+
+                            worksheet.Cells[row, cell].Style.HorizontalAlignment = align;
+                            break;
+
+                        case "column-vertical-align":
+                            var alignV = ExcelVerticalAlignment.Center;
+
+                            switch (value)
+                            {
+                                case "Top":
+                                    alignV = ExcelVerticalAlignment.Top;
+                                    break;
+                                case "Bottom":
+                                    alignV = ExcelVerticalAlignment.Bottom;                        
+                                    break;
+                                case "Justify":
+                                    alignV = ExcelVerticalAlignment.Justify;
+                                    break;
+                                case "Distributed":
+                                    alignV = ExcelVerticalAlignment.Distributed;
+                                    break;
+                            }
+
+                            worksheet.Cells[row, cell].Style.VerticalAlignment = alignV;
+                            break;
+
+
+                        
+
                     }
+
                 }
             }
             catch(Exception ex)

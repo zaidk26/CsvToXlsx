@@ -17,7 +17,7 @@ CsvToXlsx.exe "C:\temp-copies\test.csv>sheet 1>dd-mm-yyyy>auto>Y>10" "C:\temp-co
 
 Multiple files - Each on its own sheet
 
-CsvToXlsx.exe "C:\temp-copies\test.csv:sheet 1>dd-mm-yyyy>auto>N>20"  "C:\temp-copies\Bulk Note.csv:sheet 2>dd-mm-yyyy>12>N>100" "C:\temp-copies\combined.xlsx"
+CsvToXlsx.exe "C:\temp-copies\test.csv>sheet 1>dd-mm-yyyy>auto>N>20"  "C:\temp-copies\Bulk Note.csv>sheet 2>dd-mm-yyyy>12>N>100" "C:\temp-copies\combined.xlsx"
 
 =====================================================================================================================================================================
 NOTE:
@@ -73,3 +73,7 @@ font-italic=true
 font-underline=true
 font-color=#456FFF   
 font-size=26  
+
+column-horizontal-align=Center   (Center,CenterContinuous,Left,Right,Distributed,Fill,Justify)
+column-vertical-align=Center     (Center,Top,Bottom,Distributed,Justify)
+
