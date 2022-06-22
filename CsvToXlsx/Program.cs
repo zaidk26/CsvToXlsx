@@ -184,15 +184,28 @@ namespace CsvToXlsx
                 }
                 //format Currency
                 else if (Regex.Match(field, @"^[0-9]+\.[0-9][0-9]$").Success)
-                {
-                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0.00";
+                {                    
                     worksheet.Cells[row, cell].Value = double.Parse(field);
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0.00";
                 }
                 //format Currency Negative
                 else if (Regex.Match(field, @"^\([0-9]+\.[0-9][0-9]\)$").Success)
                 {
                     worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0.00";
                     worksheet.Cells[row, cell].Value = double.Parse(field.Replace("(", "-").Replace(")", ""));
+                }
+                //format Float Number (1 point)
+                else if (Regex.Match(field, @"^[0-9]+\.[0-9]").Success)
+                {
+                    string[] parts = field.Split('.');
+                    string points = "";
+                    for (int i = 0; i < parts[1].Length; i++)
+                    {
+                        points += "0";
+                    }
+                    worksheet.Cells[row, cell].Value = double.Parse(field);
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0." + points;
+                    
                 }
                 //format Float Number
                 else if (Regex.Match(field, @"^[0-9]+\.[0-9][0-9][0-9]+$").Success)
@@ -203,8 +216,9 @@ namespace CsvToXlsx
                     {
                         points += "0";
                     }
-                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0." + points;
                     worksheet.Cells[row, cell].Value = double.Parse(field);
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0." + points;
+                   
                 }
                 //format Float Number Negative
                 else if (Regex.Match(field, @"^\([0-9]+\.[0-9][0-9][0-9]+\)$").Success)
@@ -215,20 +229,23 @@ namespace CsvToXlsx
                     {
                         points += "0";
                     }
-                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0." + points;
+                  
                     worksheet.Cells[row, cell].Value = double.Parse(field.Replace("(", "-").Replace(")", ""));
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0." + points;
                 }
                 //format Interger
                 else if (Regex.Match(field, @"^[1-9]([0-9]+)?$").Success && field.Length < 16)
                 {
-                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0";
+                 
                     worksheet.Cells[row, cell].Value = Int64.Parse(field);
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0";
                 }
                 //format Negative Interger
                 else if (Regex.Match(field, @"^\([1-9]([0-9]+)?\)$").Success && field.Length < 16)
                 {
-                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0";
+               
                     worksheet.Cells[row, cell].Value = Int64.Parse(field.Replace("(", "-").Replace(")", ""));
+                    worksheet.Cells[row, cell].Style.Numberformat.Format = "#,##0";
                 }
                 //format Date
                 else if (Regex.Match(field, @"^\d\d\/\d\d\/\d\d\d\d$").Success)
