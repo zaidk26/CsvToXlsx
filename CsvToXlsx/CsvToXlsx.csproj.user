@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>"C:\users\zaid2\downloads\Stk.1301.3686465.csv&gt;sheet1&gt;dd-mm-yyyy&gt;auto&gt;Y&gt;25" "latest.xlsx"</StartArguments>
+    <StartArguments>"C:\Apps-Windows\CsvToXlsx\CsvToXlsx\bin\Debug\Monthly_Invoice_List.CSV&gt;sheet1&gt;dd-mm-yyyy&gt;auto&gt;Y&gt;25" "bearing-monthly.xlsx"</StartArguments>
   </PropertyGroup>
 </Project>
